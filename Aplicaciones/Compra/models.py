@@ -4,7 +4,7 @@ from Aplicaciones.Referenciales.models import*
 # Create your models here.
 
 class Proveedor(models.Model):
-    cod_proveedor = models.IntegerField(primary_key=True, verbose_name = "Código Proveedor")
+    cod_proveedor = models.AutoField(primary_key=True, verbose_name = "Código Proveedor")
     nombre = models.CharField(max_length=20, verbose_name= "Proveedor")
     ruc = models.CharField(max_length=15)
     telefono = models.CharField(max_length=12)
@@ -20,4 +20,5 @@ class Proveedor(models.Model):
         verbose_name = 'Proveedor'
         verbose_name_plural = 'Proveedores'
         db_table = 'proveedor'
+        ordering = ['cod_proveedor']
     
