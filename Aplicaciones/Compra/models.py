@@ -22,7 +22,7 @@ class Proveedor(models.Model):
         db_table = 'proveedor'
         ordering = ['cod_proveedor']
     
-    
+
 class Tipo_producto(models.Model):
     cod_tipo_producto=models.IntegerField(primary_key=True,verbose_name="Codigo Tipo Producto")
     descripcion=models.CharField(max_length=30,verbose_name="Tipo Producto")
@@ -57,7 +57,7 @@ class Pedidos_Compra(models.Model):
    cod_proveedor=models.ForeignKey(Proveedor,blank= False, null=False, on_delete=models.PROTECT) 
    cod_producto=models.ForeignKey(Producto,blank= False, null=False, on_delete=models.PROTECT)
    cantidad=models.IntegerField()
-   descripcion_pedidio=models.CharField(max_length=50,verbose_name="Pedido_compra")
+   descripcion_pedido=models.CharField(max_length=50,verbose_name="Pedido_compra")
    
    def __str__(self):
         return "{0} {1}".format(self.nro_pedido_compra,self.descripcion_pedidio)
