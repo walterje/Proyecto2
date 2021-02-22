@@ -22,6 +22,7 @@ class Proveedor(models.Model):
         db_table = 'proveedor'
         ordering = ['cod_proveedor']
     
+    
 class Tipo_producto(models.Model):
     cod_tipo_producto=models.IntegerField(primary_key=True,verbose_name="Codigo Tipo Producto")
     descripcion=models.CharField(max_length=30,verbose_name="Tipo Producto")
