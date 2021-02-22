@@ -6,7 +6,7 @@ admin.site.site_title = 'Bienvenidos'
 admin.site.index_title = 'Administracion IsPSys'
 
 class ciudadAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "cod_ciudad")
+    list_display = ( "cod_ciudad", "nombre")
     search_fields = ("nombre", "cod_ciudad")
 
 # Register your models here.

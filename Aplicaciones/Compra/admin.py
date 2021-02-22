@@ -14,8 +14,8 @@ class productosAdmin(admin.ModelAdmin):
     search_fields=("cod_producto","nombre_producto")
 
 class pedidoCompraAdmin(admin.ModelAdmin):
-    list_display=("nro_pedido_compra","descripcion_pedidio")
-    search_fields=("nro_pedido_compra","descripcion_pedidio")
+    list_display=("nro_pedido_compra","descripcion_pedido")
+    search_fields=("nro_pedido_compra","descripcion_pedido")
 # Register your models here.
 
 admin.site.register(Proveedor, proveedorAdmin)
