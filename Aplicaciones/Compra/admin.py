@@ -6,8 +6,8 @@ class proveedorAdmin(admin.ModelAdmin):
     search_fields = ["nombre", "cod_proveedor"]
 
 class tipoProductoAdmin(admin.ModelAdmin):
-    list_display=("cod_tipo_producto","descripcion")
-    search_fields=("cod_tipo_producto","descripcion")
+    list_display=("cod_tipo","descripcion")
+    search_fields=("cod_tipo","descripcion")
 
 class productosAdmin(admin.ModelAdmin):
     list_display=("cod_producto","nombre_producto")

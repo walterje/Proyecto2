@@ -24,7 +24,7 @@ class Proveedor(models.Model):
     
 
 class Tipo_producto(models.Model):
-    cod_tipo_producto=models.IntegerField(primary_key=True,verbose_name="Codigo Tipo Producto")
+    cod_tipo=models.IntegerField(primary_key=True,verbose_name="Codigo Tipo Producto")
     descripcion=models.CharField(max_length=30,verbose_name="Tipo Producto")
 
     def __str__(self):
@@ -32,13 +32,13 @@ class Tipo_producto(models.Model):
 
     class Meta:
         verbose_name= 'Tipo Producto'
-        db_table='Tipo_producto'
+        db_table='tipo_producto'
 
 class Producto(models.Model):
     cod_producto = models.IntegerField(primary_key=True,verbose_name = "Codigo Producto")
     nombre_producto = models.CharField(max_length=30,verbose_name="producto")
     descripcion = models.CharField(max_length=30)
-    cod_tipo_producto = models.ForeignKey(Tipo_producto,blank=False,null=False,on_delete=models.PROTECT)
+    cod_tipo = models.ForeignKey(Tipo_producto,blank=False,null=False,on_delete=models.PROTECT)
     cant_stock = models.IntegerField()
     cant_minima_stock = models.IntegerField()
     estado=models.CharField(max_length=15)
