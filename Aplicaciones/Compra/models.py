@@ -60,7 +60,7 @@ class Pedidos_Compra(models.Model):
    descripcion_pedido=models.CharField(max_length=50,verbose_name="Pedido_compra")
    
    def __str__(self):
-        return "{0} {1}".format(self.nro_pedido_compra,self.descripcion_pedidio)
+        return "{0} {1}".format(self.nro_pedido_compra,self.descripcion_pedido)
     
    class Meta:
        verbose_name = 'Pedido_compra'
