@@ -100,7 +100,7 @@ class Compra(models.Model):
 
 class CompraDetalle(models.Model):
     nro_detalle=models.CharField(max_length=15,primary_key=True, verbose_name = "Numero Detalle compra")
-    compra=models.OneToOneField(Compra,blank=False,null=False,on_delete=models.PROTECT,verbose_name = "Compra Detalle")
+    compra=models.ForeignKey(Compra,blank=False,null=False,on_delete=models.PROTECT,verbose_name = "Compra Detalle")
     producto=models.ForeignKey(Producto,blank=False,null=False,on_delete=models.PROTECT)
     cantidad=models.IntegerField()
     total_IVA=models.FloatField()
