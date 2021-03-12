@@ -1,0 +1,44 @@
+{% extends 'Aplicaciones/base.html' %}
+{% block titulo %}Lista Proveedores{% endblock titulo %}</title>
+
+
+{% block content %}
+  <h1>Lista de proveedores</h1>  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>cod_proveedor</td>
+        <td>nombre</td>
+        <td>ruc</td>
+        <td>telefono</td>
+        <td>direccion</td>
+        <td>timbrado</td>
+        <td>email</td>
+        <td>ciudad</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!--si es vista basada en clase se pone object_list-->
+      {% if object_list %}
+      {% for proveedor in object_list %}
+      <tr>
+        <td>{{proveedor.cod_proveedor}}</td>
+        <td>{{proveedor.nombre}}</td>
+        <td>{{proveedor.ruc}}</td>
+        <td>{{proveedor.telefono}}</td>
+        <td>{{proveedor.direccion}}</td>
+        <td>{{proveedor.timbrado}}</td>
+        <td>{{proveedor.email}}</td>
+        <td>{{proveedor.ciudad}}</td>
+        <td>
+          <a class="btn btn-primary" href="{% url 'editar_proveedor' proveedor.cod_proveedor %}">Editar</a> 
+          <a class="btn btn-danger" href="{% url 'eliminar_proveedor' proveedor.cod_proveedor %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+		  <h1>No hay registros de Proveedores</h1>
+		  {% endif %}
+    </tbody>
+  </table>
+{% endblock content %}

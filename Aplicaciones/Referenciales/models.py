@@ -37,20 +37,4 @@ class Empleado(models.Model):
         db_table = 'empleado'
         ordering = ['cod_empleado']
     
-class Condicion(models.Model):
-    cod_condicion = models.AutoField(primary_key=True, verbose_name="Codigo Condicion")
-    descripcion= (
-        ('0', 'Contado'),
-        ('1', 'Credito'),
-    )
-    descripcion_cond= models.CharField(max_length=2, choices=descripcion,default='2')
-    plazo = models.IntegerField()
 
-    def __str__(self):
-        return "{0} ".format(self.cod_condicion)
-
-    class Meta:
-        verbose_name = 'Condicion'
-        verbose_name_plural = 'Condiciones'
-        db_table = 'condicion'
-        ordering = ['cod_condicion']

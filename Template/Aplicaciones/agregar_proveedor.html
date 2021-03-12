@@ -1,0 +1,13 @@
+{% extends 'Aplicaciones/base.html' %}
+
+{% block titulo %}Formulario Proveedor{% endblock titulo %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-default" type="submit">Agregar</button>
+    <button class="btn btn-default" type="submit"><a href="{% url 'index'  %}">Cancelar</a></button>
+</form>
+
+{% endblock %}
